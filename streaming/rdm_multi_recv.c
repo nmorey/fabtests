@@ -85,7 +85,7 @@ static int repost_recv(int iteration) {
 int wait_for_recv_completion(int num_completions)
 {
 	int i, ret;
-	struct fi_cq_data_entry comp;
+	struct fi_cq_tagged_entry comp;
 
 	while (num_completions > 0) {
 		ret = fi_cq_read(rxcq, &comp, 1);
